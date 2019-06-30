@@ -1,23 +1,42 @@
-var login = function() {
-
-  var email = '';
-  var password = '';
-
-  function setEmailField(email) {
-    email = email;
+function loginElements() {
+  return {
+    email: function() { return $('#email') },
+    password: function() { return $('#passwd') },
+    submitButton: function() { return $('#SubmitLogin') }
   }
+}
 
-  function setPasswordField(password) {
-    password = password;
-  }
+function loginMethods() {
+  const element = loginElements()
 
   return {
-    fillLoginForm: function(email, password) {
-      setEmailField(email)
-      setPasswordField(password)
+    setInfoLogin: function(emailParam) {
+      element.email().waitForExist()
+      element.email().clearValue()
+      element.email().setValue(emailParam)
+    },
+
+    setInfoPassword: function(password){
+      element.password().clearValue()
+      element.password().setValue(password)
+    },
+
+    confirmLogin: function(){
+      element.submitButton().click()
     }
   }
-};
+}
 
-exports.module = login();
-loginPage.fillLoginForm(email, password);
+function login() {
+  const login = loginMethods()
+
+  return {
+    fillForm: function(user, password) {
+      login.setInfoLogin(user)
+      login.setInfoPassword(password)
+      login.confirmLogin()
+    }
+  }
+}
+
+module.exports = login()
