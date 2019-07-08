@@ -9,9 +9,9 @@ branches:
 services:
   - docker
 before_install:
-- npm i -g npm
 - docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome:3.141.59-radium
 install:
   - npm install
-script: npm test
+script:
+  - npm test
 cache: npm
