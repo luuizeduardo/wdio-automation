@@ -31,9 +31,9 @@ function login() {
   const login = loginMethods()
 
   return {
-    fillForm: function(user, password) {
-      login.setInfoLogin(user)
-      login.setInfoPassword(password)
+    fillForm: function(objLogin) {
+      login.setInfoLogin(objLogin.email)
+      login.setInfoPassword(objLogin.password)
       login.confirmLogin()
     }
   }
