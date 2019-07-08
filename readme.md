@@ -1,5 +1,7 @@
 # Functional automation with WebDriver.io
 
+[![Build Status](https://travis-ci.com/luuizeduardo/wdio-automation.svg?branch=master)](https://travis-ci.com/luuizeduardo/wdio-automation)
+
 This repository was created to functional test automation of [automation practice website](http://automationpractice.com).
 
 Tecnologies used:
