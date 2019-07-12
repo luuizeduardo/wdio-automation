@@ -1,0 +1,16 @@
+{
+  "reportPortalClientConfig": {
+    "token": "",
+    "endpoint": "",
+    "launch": "AUTOMATION",
+    "project": "",
+    "mode": "DEFAULT",
+    "debug": false,
+    "tags": ["functional"]
+  },
+  "reportSeleniumCommands": false,
+  "autoAttachScreenshots": false,
+  "seleniumCommandsLogLevel": "debug",
+  "screenshotsLogLevel": "info",
+  "parseTagsFromTestTitle": false
+}
