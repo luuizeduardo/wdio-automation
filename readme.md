@@ -48,6 +48,12 @@ conf.reportPortalClientConfig.token = process.env.RP_USERUUID
 conf.reportPortalClientConfig.endpoint = process.env.RP_ENDPOINT
 conf.reportPortalClientConfig.project = process.env.RP_PROJECT
 ```
----
+5. Create another container to selenium standalone. This step helps you to install selenium without Java dependency. Run `docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome:3.141.59-radium`.
+6. Install the dependencies of this project with `npm install`.
 
--- Coming soon --
+## Running test suit
+
+To run our test suit:
+- Open terminal.
+- Navigate to the path the project was cloned in.
+- Run `npm test`
