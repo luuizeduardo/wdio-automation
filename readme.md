@@ -38,7 +38,7 @@ Login to a service instance and perform the next steps:
 - RP_USERUUID: User UUID. Refer to Preparing Report Portal for instructions how to get it.
 - RP_ENDPOINT: Address of report portal.
 - RP_PROJECT: Project that you create in step 1.
-7. Modify WDIO config to support ReportPortal. The final step we need to do is to notify WDIO that we want to use NPM modules responsible for integration with RP. Report Portal support is enabled by 2 NPM modules: `wdio-reportportal-reporter` and `wdio-reportportal-service`. Refer to the corresponding NPM repo pages for their description. To activate the modules insert the following snippet for project config file (wdio.config.js) at the beginning:
+4. Modify WDIO config to support ReportPortal. The final step we need to do is to notify WDIO that we want to use NPM modules responsible for integration with RP. Report Portal support is enabled by 2 NPM modules: `wdio-reportportal-reporter` and `wdio-reportportal-service`. Refer to the corresponding NPM repo pages for their description. To activate the modules insert the following snippet for project config file (wdio.config.js) at the beginning:
 ```JS
 require('dotenv').config()
 const reportportal = require('wdio-reportportal-reporter');
