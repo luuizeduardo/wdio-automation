@@ -10,8 +10,6 @@ function signupMethods() {
 
   return {
     setInfoEmailSignup: function(emailParam) {
-      console.log(emailParam);
-
       element.email().waitForExist()
       element.email().clearValue()
       element.email().setValue(emailParam)

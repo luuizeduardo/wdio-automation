@@ -1,3 +1,4 @@
+/*
 require('dotenv').config()
 const reportportal = require('wdio-reportportal-reporter');
 const RpService = require("wdio-reportportal-service");
@@ -6,7 +7,7 @@ const conf = JSON.parse(require('fs').readFileSync('reportportal.config.json'));
 conf.reportPortalClientConfig.token = process.env.RP_USERUUID
 conf.reportPortalClientConfig.endpoint = process.env.RP_ENDPOINT
 conf.reportPortalClientConfig.project = process.env.RP_PROJECT
-
+*/
 exports.config = {
   runner: 'local',
   hostname: 'localhost',
@@ -31,8 +32,8 @@ exports.config = {
   connectionRetryTimeout: 90000,
   connectionRetryCount: 3,
   framework: 'mocha',
-  services: [[RpService, {}]],
-  reporters: [[reportportal, conf]],
+  // services: [[RpService, {}]],
+  // reporters: [[reportportal, conf]],
   mochaOpts: {
     ui: 'bdd',
     timeout: 60000
