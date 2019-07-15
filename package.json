@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/wdio wdio.conf.js -l 'silent'"
+    "test": "./node_modules/.bin/wdio wdio.conf.js -l 'silent'",
+    "ci": "./node_modules/.bin/wdio wdio.conf.js"
   },
   "keywords": [],
   "author": "Luiz Eduardo Martins",
