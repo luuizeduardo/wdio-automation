@@ -14,10 +14,4 @@ install:
   - npm install
 script:
   - npm test
-env:
-  global:
-    - CACHE_DIR=$HOME/.cache/docker
-cache:
-  - npm
-  directories:
-  - $CACHE_DIR
+cache: npm
