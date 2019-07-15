@@ -13,7 +13,7 @@ exports.config = {
   port: 4444,
   path: '/wd/hub',
   specs: [
-    './test/specs/signup/*.js'
+    './test/specs/**/*.js'
   ],
   maxInstances: 10,
   capabilities: [{
