@@ -16,6 +16,7 @@
     "@wdio/sync": "^5.10.8",
     "chromedriver": "^75.0.0",
     "dotenv": "^8.0.0",
+    "faker": "^4.1.0",
     "wdio-reportportal-reporter": "^5.0.1",
     "wdio-reportportal-service": "^5.0.2"
   }

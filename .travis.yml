@@ -9,9 +9,15 @@ branches:
 services:
   - docker
 before_install:
-- docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome:3.141.59-radium
+- docker-compose up -d
 install:
   - npm install
 script:
   - npm test
-cache: npm
+env:
+  global:
+    - CACHE_DIR=$HOME/.cache/docker
+cache:
+  - npm
+  directories:
+  - $CACHE_DIR

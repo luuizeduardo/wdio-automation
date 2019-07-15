@@ -1,11 +1,14 @@
 const assert = require('assert')
-const loginPage = require('../../pages/login/login.page')
-const takeScreenshot = require('../../utils/screenshot')
-const data = require('../../resources/login')
+const loginPage = require('../../../pages/login/login.page')
+const takeScreenshot = require('../../../utils/screenshot')
+const data = require('../../../resources/login/login')
 
 describe('Automation practice login page', function() {
-  it('must show an error message with invalid credentials', function() {
+  before(function (){
     browser.url('/index.php?controller=authentication&back=my-account')
+  })
+
+  it('must show an error message with invalid credentials', function() {
     loginPage.fillForm(data.invalid_credencials)
 
     takeScreenshot('./logs/screenshot/error_invalid_login.png')
@@ -15,7 +18,6 @@ describe('Automation practice login page', function() {
   });
 
   it('must redirect user to my account page', function() {
-    browser.url('/index.php?controller=authentication&back=my-account')
     loginPage.fillForm(data.valid_credentials)
 
     takeScreenshot('./logs/screenshot/valid_login.png')

@@ -13,12 +13,16 @@ exports.config = {
   port: 4444,
   path: '/wd/hub',
   specs: [
-    './test/specs/**/*.js'
+    './test/specs/signup/*.js'
   ],
   maxInstances: 10,
   capabilities: [{
     maxInstances: 5,
     browserName: 'chrome',
+  },
+  {
+    maxInstances: 5,
+    browserName: 'firefox',
   }],
   logLevel: 'info',
   bail: 0,
