@@ -3,4 +3,8 @@ node_modules
 package-lock.json
 yarn.lock
 logs/screenshot/*.png
+logs/results
+logs/.DS_Store
+.DS_Store
 .env
+allure-report/

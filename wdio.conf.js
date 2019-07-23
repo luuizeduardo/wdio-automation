@@ -20,10 +20,6 @@ exports.config = {
   capabilities: [{
     maxInstances: 5,
     browserName: 'chrome',
-  },
-  {
-    maxInstances: 5,
-    browserName: 'firefox',
   }],
   logLevel: 'info',
   bail: 0,
@@ -34,6 +30,11 @@ exports.config = {
   framework: 'mocha',
   // services: [[RpService, {}]],
   // reporters: [[reportportal, conf]],
+  reporters: [['allure', {
+    outputDir: './logs/results/',
+    disableWebdriverStepsReporting: true,
+    disableWebdriverScreenshotsReporting: false,
+  }]],
   mochaOpts: {
     ui: 'bdd',
     timeout: 60000

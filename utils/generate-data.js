@@ -3,27 +3,31 @@ faker.locale = "pt_BR";
 
 // Personal data
 function fakeFirstName() {
-  return faker.name.firstName
+  return faker.name.firstName()
 }
 
 function fakeLastName() {
-  return faker.name.lastName
+  return faker.name.lastName()
 }
 
 function fakeStreetName() {
-  return faker.address.streetName
+  return faker.address.streetName()
+}
+
+function fakeSecondaryAddress() {
+  return faker.address.secondaryAddress()
 }
 
 function fakeCityName() {
-  return faker.address.city
+  return faker.address.city()
 }
 
-function fakeZipCode() {
-  return faker.address.zipCode
+function fakePostalCode() {
+  return faker.address.zipCode('#####')
 }
 
 function fakePhoneNumber() {
-  return faker.phone.phoneNumber
+  return faker.phone.phoneNumber()
 }
 
 // User auth data
@@ -32,17 +36,21 @@ function fakeEmail() {
 }
 
 function fakePassword() {
-  return faker.internet.password
+  return faker.internet.password()
 }
 
 // Company data
 function fakeCompanyName() {
-  return faker.company.companyName
+  return faker.company.companyName()
 }
 
 // Others
 function fakeLorem() {
   return faker.lorem.paragraph(2)
+}
+
+function fakeNumber(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min
 }
 
 module.exports = {
@@ -52,8 +60,10 @@ module.exports = {
   fakeFirstName,
   fakeLastName,
   fakeLorem,
+  fakeNumber,
   fakePassword,
   fakePhoneNumber,
-  fakeStreetName,
-  fakeZipCode
+  fakePostalCode,
+  fakeSecondaryAddress,
+  fakeStreetName
 }
