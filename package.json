@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "rm -Rf logs/results && mkdir logs/results && ./node_modules/.bin/wdio wdio.conf.js -l 'silent' && npm run report",
-    "ci": "mkdir logs/results && ./node_modules/.bin/wdio wdio.conf.js",
+    "ci": "./node_modules/.bin/wdio wdio.conf.js",
     "report": "allure generate --clean logs/results && allure open"
   },
   "keywords": [],
