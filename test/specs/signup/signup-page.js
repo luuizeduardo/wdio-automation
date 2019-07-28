@@ -30,8 +30,8 @@ let signup_valid_credentials = {
   "mobilePhone": fakeData.fakePhoneNumber(),
   "assertion": "MY ACCOUNT"
 }
-console.log(signup_valid_credentials);
 
+let assertion_text = ""
 
 describe('Automation practice signup page', function() {
   before(function (){
@@ -40,18 +40,24 @@ describe('Automation practice signup page', function() {
 
   it('must show an error message with invalid credentials', function() {
     signupPage.fillPreForm(signup_pre_form_valid_credentials)
+
     takeScreenshot('./logs/screenshot/signup_pre_form_valid_credentials.png')
 
-    browser.waitUntil(() => {
-      return $('.page-heading').getText() === signup_pre_form_valid_credentials.assertion
-    }, 3000, 'expected text to be different after 3s');
+    const elem = $('#customer_firstname')
+    elem.waitForExist(2000)
 
+    assertion_text = $('.page-heading').getText()
+
+    assert.strictEqual(assertion_text, signup_pre_form_valid_credentials.assertion)
+  });
+
+  it('must create an account', function() {
     signupPage.fillForm(signup_valid_credentials)
 
     takeScreenshot('./logs/screenshot/signup_valid_credentials.png')
 
-    browser.waitUntil(() => {
-      return $('.page-heading').getText() === signup_valid_credentials.assertion
-    }, 3000, 'expected text to be different after 3s');
+    assertion_text = $('.page-heading').getText()
+
+    assert.strictEqual(assertion_text, signup_valid_credentials.assertion)
   });
 });
