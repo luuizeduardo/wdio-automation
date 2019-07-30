@@ -18,7 +18,7 @@ Follow steps [here](https://reportportal.io/download) to install the service on 
 
 ## Setup
 
-The guide goes throught steps required to setup test automation project based on [WebDriver.io](https://webdriver.io) in order to work with Report Portal.
+The guide goes throught steps required to setup test automation project based on [WebDriver.io](https://webdriver.io) in order to work with Report Portal or Allure Reports.
 
 ## Preparing Report Portal
 
@@ -50,6 +50,10 @@ conf.reportPortalClientConfig.project = process.env.RP_PROJECT
 ```
 5. Create a Selenium Grid container to run the project using multiple browsers. Run: `docker-compose up -d`.
 6. Install the dependencies of this project with `npm install`.
+
+# Allure reports (default)
+
+The default report generator is Allure Reports. This is the reporter that you will use when the test suit is executed.
 
 ## Running test suit
 
