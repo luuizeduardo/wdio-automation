@@ -13,7 +13,7 @@ describe('Automation practice signup page', function() {
   it('must show an error message with invalid credentials', function() {
     signupPage.fillPreForm(data.signup_pre_form_valid_credentials)
 
-    takeScreenshot('./logs/screenshot/signup_pre_form_valid_credentials.png')
+    takeScreenshot('./logs/screenshot/', 'signup_pre_form_valid_credentials.png')
 
     const elem = $('#customer_firstname')
     elem.waitForExist(2000)
@@ -26,7 +26,7 @@ describe('Automation practice signup page', function() {
   it('must create an account', function() {
     signupPage.fillForm(data.signup_valid_credentials)
 
-    takeScreenshot('./logs/screenshot/signup_valid_credentials.png')
+    takeScreenshot('./logs/screenshot/', 'signup_valid_credentials.png')
 
     assertion_text = $('.page-heading').getText()
 

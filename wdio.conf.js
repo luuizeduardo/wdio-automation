@@ -1,3 +1,4 @@
+const takeScreenshot = require('./utils/screenshot')
 /*
 require('dotenv').config()
 const reportportal = require('wdio-reportportal-reporter');
@@ -14,7 +15,7 @@ exports.config = {
   port: 4444,
   path: '/wd/hub',
   specs: [
-    './test/specs/**/*.js'
+    './test/specs/login/*.js'
   ],
   maxInstances: 10,
   capabilities: [{
@@ -38,5 +39,11 @@ exports.config = {
   mochaOpts: {
     ui: 'bdd',
     timeout: 60000
+  },
+
+  afterTest(test) {
+    if (test.passed === false) {
+      takeScreenshot('./logs/screenshot/', 'screenshot_fail.png')
+    }
   }
 }
