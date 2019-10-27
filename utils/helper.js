@@ -9,7 +9,19 @@ function takeScreenshot(path, image) {
     }
     // file exists
     browser.saveScreenshot(path + image)
-  });
+  })
 }
 
-module.exports = takeScreenshot
+function getBrowserTitle() {
+  return browser.getTitle()
+}
+
+function getPageHeader() {
+  return $('.page-heading').getText()
+}
+
+module.exports = {
+  takeScreenshot,
+  getBrowserTitle,
+  getPageHeader
+}
