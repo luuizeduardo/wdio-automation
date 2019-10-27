@@ -1,4 +1,4 @@
-const takeScreenshot = require('./utils/screenshot')
+const takeScreenshot = require('./utils/helper').takeScreenshot
 /*
 require('dotenv').config()
 const reportportal = require('wdio-reportportal-reporter');
