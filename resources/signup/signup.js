@@ -1,4 +1,4 @@
-const fakeData = require('../../utils/generate-data')
+const fakeData = require("../../utils/generate-data")
 
 module.exports = {
   "signup_pre_form_valid_credentials": {

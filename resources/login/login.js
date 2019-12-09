@@ -4,6 +4,7 @@ module.exports = {
     "password": "123",
     "assertion_title": "Login - My Store"
   },
+
   "valid_credentials": {
     "email": "1234@pokemail.net",
     "password": "Teste12345!",

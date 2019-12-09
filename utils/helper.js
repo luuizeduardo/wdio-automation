@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require("fs");
 
 function takeScreenshot(path, image) {
 
@@ -17,7 +17,7 @@ function getBrowserTitle() {
 }
 
 function getPageHeader() {
-  return $('.page-heading').getText()
+  return $(".page-heading").getText()
 }
 
 module.exports = {

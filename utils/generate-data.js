@@ -1,4 +1,4 @@
-const faker = require('faker');
+const faker = require("faker");
 faker.locale = "pt_BR";
 
 // Personal data
@@ -23,7 +23,7 @@ function fakeCityName() {
 }
 
 function fakePostalCode() {
-  return faker.address.zipCode('#####')
+  return faker.address.zipCode("#####")
 }
 
 function fakePhoneNumber() {
