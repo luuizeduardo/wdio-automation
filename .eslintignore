@@ -1,0 +1,8 @@
+node_modules/*
+allure-report/*
+logs/*
+package-lock.json
+yarn.lock
+readme.md
+*.yml
+*.json

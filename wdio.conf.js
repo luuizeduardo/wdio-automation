@@ -1,4 +1,4 @@
-const takeScreenshot = require('./utils/helper').takeScreenshot
+const takeScreenshot = require("./utils/helper").takeScreenshot
 /*
 require('dotenv').config()
 const reportportal = require('wdio-reportportal-reporter');
@@ -10,40 +10,40 @@ conf.reportPortalClientConfig.endpoint = process.env.RP_ENDPOINT
 conf.reportPortalClientConfig.project = process.env.RP_PROJECT
 */
 exports.config = {
-  runner: 'local',
-  hostname: 'localhost',
+  runner: "local",
+  hostname: "localhost",
   port: 4444,
-  path: '/wd/hub',
+  path: "/wd/hub",
   specs: [
-    './test/specs/**/*.js'
+    "./test/specs/**/*.js"
   ],
   maxInstances: 10,
   capabilities: [{
     maxInstances: 5,
-    browserName: 'chrome',
+    browserName: "chrome",
   }],
-  logLevel: 'info',
+  logLevel: "info",
   bail: 0,
-  baseUrl: 'http://automationpractice.com',
+  baseUrl: "http://automationpractice.com",
   waitforTimeout: 10000,
   connectionRetryTimeout: 90000,
   connectionRetryCount: 3,
-  framework: 'mocha',
+  framework: "mocha",
   // services: [[RpService, {}]],
   // reporters: [[reportportal, conf]],
-  reporters: [['allure', {
-    outputDir: './logs/results/',
+  reporters: [["allure", {
+    outputDir: "./logs/results/",
     disableWebdriverStepsReporting: true,
     disableWebdriverScreenshotsReporting: false,
   }]],
   mochaOpts: {
-    ui: 'bdd',
+    ui: "bdd",
     timeout: 60000
   },
 
   afterTest(test) {
     if (test.passed === false) {
-      takeScreenshot('./logs/screenshot/', 'screenshot_fail.png')
+      takeScreenshot("./logs/screenshot/", "screenshot_fail.png")
     }
   }
 }

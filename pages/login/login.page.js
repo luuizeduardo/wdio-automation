@@ -1,8 +1,8 @@
 function loginElements() {
   return {
-    email: function() { return $('#email') },
-    password: function() { return $('#passwd') },
-    submitButton: function() { return $('#SubmitLogin') }
+    email: function() { return $("#email") },
+    password: function() { return $("#passwd") },
+    submitButton: function() { return $("#SubmitLogin") }
   }
 }
 
